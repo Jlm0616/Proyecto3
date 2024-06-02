@@ -8,7 +8,7 @@ class Carta:
         self.Color = color
 
     def __str__(self):
-        return f"{self.Valor},{ self.Color}"
+        return f"{self.Valor}_{ self.Color}"
         
 class Comodin(Carta):
     def __init__(self,valor,color):
