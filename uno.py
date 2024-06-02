@@ -6,6 +6,9 @@ class Carta:
     def __init__(self,valor,color):
         self.Valor = valor
         self.Color = color
+
+    def __str__(self):
+        return f"{self.Valor},{ self.Color}"
         
 class Comodin(Carta):
     def __init__(self,valor,color):
@@ -38,7 +41,7 @@ def crearMazoCartas():
     for color in colores:
         especial = 0
         for numero in range(3):
-            carta = Comodin(color,especiales[especial])
+            carta = Comodin(especiales[especial],color)
             cartas+= [carta]
             cartas += [carta]
             especial += 1
@@ -51,12 +54,14 @@ def crearMazoCartas():
 
     #random.shuffle(cartas)
 
-    for carta in cartas:
-        print("Valor: "+str(carta.Valor))
-        print("Color: "+carta.Color)
-        print("Tipo: "+carta.Tipo)
     print(str(len(cartas)))
+    print()
+    contador = 1
+    for carta in cartas:
+        print(contador, carta)
+        contador += 1
 
 
 crearMazoCartas()
+
 
